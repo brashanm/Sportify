@@ -9,9 +9,6 @@ import (
 	"net/http"
 	"strings"
 	"time"
-
-	pb "github.com/yourusername/nbastream/pkg/proto"
-	"github.com/yourusername/nbastream/pkg/subscription"
 )
 
 // APIResponse represents the structure of the balldontlie API response.

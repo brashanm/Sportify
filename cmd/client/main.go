@@ -10,8 +10,7 @@ import (
 	"strings"
 	"time"
 
-	pb "github.com/yourusername/nbastream/pkg/proto"
-	"google.golang.org/grpc"
+	pb "google.golang.org/grpc"
 )
 
 func main() {

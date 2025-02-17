@@ -4,10 +4,6 @@ package subscription
 import (
 	"errors"
 	"sync"
-
-	pb "pkg/proto"
-	"github.com/google/uuid"
-	"github.com/brashanm/Sportify/pkg/metrics"
 )
 
 // Subscription represents an active client subscription.

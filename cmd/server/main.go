@@ -5,14 +5,6 @@ import (
 	"log"
 	"net"
 	"time"
-
-	pb "github.com/yourusername/nbastream/pkg/proto"
-	"github.com/yourusername/nbastream/pkg/data"
-	"github.com/yourusername/nbastream/pkg/metrics"
-	"github.com/yourusername/nbastream/pkg/subscription"
-
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 )
 
 type server struct {
@@ -64,7 +56,6 @@ func main() {
 	// Do an initial fetch shortly after start.
 	go func() {
 		// Wait a couple of seconds before the first fetch.
-		// (This ensures that subscriptions can be set up soon after startup.)
 		time.Sleep(2 * time.Second)
 		if err := data.FetchAndDispatch(subManager); err != nil {
 			log.Printf("Initial fetch error: %v", err)
