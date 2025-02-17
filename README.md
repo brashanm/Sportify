@@ -1,6 +1,6 @@
 # Sportify
 
-Ever since I was a kid, basketball has been more than just a game to me. I grew up dreaming about scoring buzzer-beaters and running into the crowd. Now, as an adult with a newfound curiousity for distributed systems, I decided to merge these two interest into a single project: a real‑time NBA score subscription system.
+Ever since I was a kid, basketball has been more than just a game to me. I grew up dreaming about scoring buzzer-beaters and running into the crowd. Now, after I got really into concurrency and distributed systems after I class I took in school, I decided to merge these two interests into a single project: a real‑time NBA score subscription system.
 
 This project is a CLI‑based application written in Go that leverages gRPC for streaming live updates and uses Prometheus (with Grafana for visualization) to monitor performance and reliability. It pulls data from the [balldontlie API](https://www.balldontlie.io/) so you can keep up with your favourite teams and players in real-time.
 
