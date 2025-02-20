@@ -11,12 +11,5 @@ This project is a CLI‑based application written in Go that leverages gRPC for 
 - **Distributed System Design:** Leverages Go’s concurrency and modern system design practices to ensure scalability and resilience.
 - **Monitoring & Metrics:** Integrated with Prometheus and Grafana to visualize key performance metrics like active subscriptions, request latencies, and error rates.
 
-## Architecture Overview
-
-The system is designed with simplicity and performance in mind:
-- **Data Fetcher:** Periodically polls the external NBA API (every minute) to retrieve the latest game and player data.
-- **Subscription Manager:** Maintains a registry of active client subscriptions, filtering and releasing updates based on the client's request (by team or player).
-- **gRPC Server:** Streams real‑time updates to clients using gRPC.
-
 
 

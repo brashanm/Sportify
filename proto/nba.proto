@@ -1,0 +1,46 @@
+syntax = "proto3";
+package nba;
+option go_package = "Sportify/proto;nba";
+
+import "google/protobuf/timestamp.proto";
+
+enum SubscriptionType {
+    UNKNOWN = 0;
+    PLAYER = 1;
+    TEAM = 2;
+}
+
+message SubscriptionRequest {
+    SubscriptionType type = 1;
+    string name = 2;
+}
+
+message PlayerStats {
+    int32 player_id = 1;
+    string player_name = 2;
+    int32 points = 3;
+    int32 rebounds = 4;
+    int32 assists = 5;
+    google.protobuf.Timestamp game_date = 6;
+}
+
+message TeamScore {
+    int32 team_id = 1;
+    string team_name = 2;
+    int32 home_score = 3;
+    int32 visitor_score = 4;
+    bool is_live = 5;
+    google.protobuf.Timestamp game_date = 6;
+}
+
+message SubscriptionResponse {
+    google.protobuf.Timestamp updated_at = 1;
+    oneof update {
+        PlayerStats player_stats = 2;
+        TeamScore team_score = 3;
+    }
+}
+
+service SubscriptionService {
+    rpc Subscribe(SubscriptionRequest) returns (stream SubscriptionResponse);
+}
